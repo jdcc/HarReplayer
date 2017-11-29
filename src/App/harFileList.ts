@@ -4,7 +4,7 @@ import HarFile from "./harFile/harFile.js";
 import Config from "./config.js";
 import Logger from "./logger.js";
 import HarResponseCache from "./HarFileCache/harResponseCache.js";
-import HarResponseCacheFile from "./HarFileCache/HarResponseCacheFile.js";
+import HarResponseCacheFile from "./HarFileCache/harResponseCacheFile.js";
 import harServerUrl from "./harServerUrl.js"
 
 export default class HarFileList {

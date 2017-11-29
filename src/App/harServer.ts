@@ -9,7 +9,7 @@ import * as fs from "fs";
 import * as express from "express";
 import * as urlParser from "url"
 import * as queryString from 'query-string';
-import Header from "./HarFile/header.js";
+import Header from "./harFile/header.js";
 
 var https = require('https');
 var http = require('http');

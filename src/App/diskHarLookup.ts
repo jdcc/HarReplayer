@@ -1,12 +1,13 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.// Licensed under the MIT license.
 import * as fs from 'fs';
+import * as path from 'path';
 import harServerUrl from "./harServerUrl.js"
 import Config from "./config.js";
 import Logger from "./logger.js";
 var azure = require('azure-storage');
 
 export default class DiskHarLookup {
-  
+
   private harFilesFolder: string = Config.Instance().HarFilePath;
   private static _instance: DiskHarLookup = null;
 
@@ -19,7 +20,7 @@ export default class DiskHarLookup {
   }
 
   public LoadFile(filename: string, onDownloaded) {
-    var harFilePath = this.harFilesFolder + '\\' + filename;
+    var harFilePath = path.join(this.harFilesFolder, filename);
     fs.readFile(harFilePath, function read(err, data) {
       if (!err){
         onDownloaded(data);
