@@ -37,7 +37,11 @@ export function start(listenPort: number, listenPortSSL: number, sslKeyLocation:
             responseObj.setHeader(header.name, responseBytes.length);
           }
           else {
-            responseObj.setHeader(header.name, header.value);
+            try { 
+              responseObj.setHeader(header.name, header.value);
+            } catch (e) {
+              Logger.Instance().Log('warn', 'Invalid HTTP header: ' + header.name);
+            }
           }
       }
     }
